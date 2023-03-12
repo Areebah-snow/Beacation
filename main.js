@@ -9,9 +9,10 @@ const observer =  new IntersectionObserver((entries) =>{
          }
   })
 })
-
+let darkTheme = document.getElementById('dark')
 let menuBar = document.querySelector(".menu-icon")
 let navBar = document.querySelector(".nav-list")
+let body = document.getElementsByTagName('body')
 const hiddenElements = document.querySelectorAll(".hidden")
 hiddenElements.forEach((el)=>observer.observe(el));
 menuBar.addEventListener("click",()=>{
@@ -19,7 +20,13 @@ menuBar.addEventListener("click",()=>{
    
 })
 window.onscroll = ()=>{
-  if(window.scrollY > 10){
+  if(window.scrollY > 5){
     navBar.classList.remove("active")
   }
 }
+
+darkTheme.addEventListener('click',()=>{
+  console.log('hi')
+  body.style.backgroundColor = black;
+  body.style.color = white;
+})
